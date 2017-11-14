@@ -1,0 +1,40 @@
+{
+  "departments": [
+    {
+      "departmentName": "Отдел снабжения",
+      "departmentHeadName": "Иван Сергеев",
+      "isSigned": false,
+      "id": 0
+    },
+    {
+      "departmentName": "Экономический отдел",
+      "departmentHeadName": "Андрей Смоляр",
+      "isSigned": false,
+      "id": 1
+    },
+    {
+      "departmentName": "Сборочный цех",
+      "departmentHeadName": "Дмитрий Давыдов",
+      "isSigned": false,
+      "id": 2
+    },
+    {
+      "departmentName": "Отдел логистики",
+      "departmentHeadName": "Аристарх Карпов",
+      "isSigned": false,
+      "id": 3
+    },
+    {
+      "departmentName": "Отдел качества",
+      "departmentHeadName": "Федор Свиридов",
+      "isSigned": false,
+      "id": 4
+    },
+    {
+      "departmentName": "Отдел IT",
+      "departmentHeadName": "Гарри Каспаров",
+      "isSigned": false,
+      "id": 5
+    }
+  ]
+}

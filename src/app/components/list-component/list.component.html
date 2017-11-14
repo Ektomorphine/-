@@ -1,0 +1,45 @@
+  <div class="header" >
+    <span class="title">
+      Обходной лист
+    </span>
+  </div>
+  <div class="bgc">
+    <div class="container">
+      <div *ngFor="let item of signs" class="department-container">
+        <span class="white-text">{{item.departmentName}}</span>
+        <span *ngIf="item.isSigned; else unsigned">
+         <img src="../assets/ok.png" class="icon">
+        </span>
+        <span>
+          <ng-template #unsigned>
+            <img src="../assets/not-ok.png" class="icon">
+          </ng-template>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" style="top:100px;">
+  <span>
+    <h2>{{signs[this.iteration].departmentName}}</h2>
+    <p>
+      Глава: {{signs[this.iteration].departmentHeadName}}
+    </p>
+  </span>
+  <button (click)="submitSign()">ПОДПИСАТЬ</button>
+  <button (click)="deniedSign()">ОТКАЗАТЬ</button>
+  <hr>
+  <div *ngIf="this.validation; else invalid">
+    <div class="validate">
+      Обходной лист одобрен
+    </div>
+  </div>
+  <div class="invalidate">
+    <ng-template #invalid>
+      Обходной лист не одобрен
+    </ng-template>
+  </div>
+</div>
+
+
+
