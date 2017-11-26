@@ -9,9 +9,9 @@ import { Response } from '@angular/http';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  public signs: DepartmentModel[] = [];
+  public signs: DepartmentModel[];
   public iteration = 0;
-  public validation: boolean;
+  public validation = false;
 
   constructor( private _departmentService: DepartmentService ) {}
 
@@ -21,44 +21,25 @@ export class ListComponent implements OnInit {
       .subscribe((data => this.signs = data.json()));
   }
 
-  public submitSign(): void {
-    this.signs[this.iteration].isSigned = true;
-    this.iteration++;
-    this.calculateValidation();
-  }
-
-  public deniedSign(): void {
+  public next(): void {
     this.iteration++;
   }
 
-  public calculateValidation(): void {
-    if (this.signs[0].isSigned && this.signs[1].isSigned && this.signs[2].isSigned &&
-        this.signs[3].isSigned && this.signs[4].isSigned && this.signs[5].isSigned ) {
-        this.validation = true;
+  public signDocument(item): void {
+    console.log(item.departmentName);
+    this.signs[item.id].isSigned = true;
+    this.checkValidation();
+  }
 
-    } else {
-      this.validation = false;
+  public checkValidation(): void {
+    if((this.signs[0].isSigned || this.signs[1].isSigned) && ((this.signs[2].isSigned) &&
+      this.signs[3].isSigned)) {
+      this.validation = true;
+      console.log(this.validation);
     }
   }
+
+  public submit(): void {
+    this._departmentService.sendData(this.signs);
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* TODO: алерт по неудачному завершению */

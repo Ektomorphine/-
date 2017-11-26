@@ -18,28 +18,15 @@
       </div>
     </div>
   </div>
-
   <div class="container" style="top:100px;">
-  <span>
-    <h2>{{signs[this.iteration].departmentName}}</h2>
-    <p>
-      Глава: {{signs[this.iteration].departmentHeadName}}
-    </p>
-  </span>
-  <button (click)="submitSign()">ПОДПИСАТЬ</button>
-  <button (click)="deniedSign()">ОТКАЗАТЬ</button>
-  <hr>
-  <div *ngIf="this.validation; else invalid">
-    <div class="validate">
-      Обходной лист одобрен
+    <div *ngFor="let sign of signs">
+      <div *ngIf="sign.level == iteration" class="sign" >
+        {{sign.departmentName}}, Глава: {{sign.departmentHeadName}}
+        <button class="float" (click)="signDocument(sign)">Подписать</button>
+      </div>
+    </div>
+    <button (click)="next()" > Далее</button>
+    <div *ngIf="validation">
+      <button (click)="submit()">Submit</button>
     </div>
   </div>
-  <div class="invalidate">
-    <ng-template #invalid>
-      Обходной лист не одобрен
-    </ng-template>
-  </div>
-</div>
-
-
-

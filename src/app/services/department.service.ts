@@ -17,4 +17,8 @@ export class DepartmentService {
   public getDepartment(): any {
     return this.http.get(URL);
   }
+
+  public sendData(data): any {
+    return this.http.post('http://localhost:3001/sheets', data).subscribe();
+  }
 }
