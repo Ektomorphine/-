@@ -1,32 +1,19 @@
-  <div class="header" >
-    <span class="title">
-      Обходной лист
-    </span>
+<div class="container">
+  <span class="sign-list" *ngFor="let sign of signs" [ngClass]="{'done': sign.isSigned}">
+    {{sign.departmentName}}
+  </span>
+</div>
+
+<hr>
+
+<div *ngFor="let sign of signs">
+  <div *ngIf="sign.level == iteration" class="block">
+    {{sign.departmentName}}
+    <br>
+    <button (click)="signDocument(sign)" style="position: relative;margin: 10px;"> Подписать </button>
   </div>
-  <div class="bgc">
-    <div class="container">
-      <div *ngFor="let item of signs" class="department-container">
-        <span class="white-text">{{item.departmentName}}</span>
-        <span *ngIf="item.isSigned; else unsigned">
-         <img src="../assets/ok.png" class="icon">
-        </span>
-        <span>
-          <ng-template #unsigned>
-            <img src="../assets/not-ok.png" class="icon">
-          </ng-template>
-        </span>
-      </div>
-    </div>
-  </div>
-  <div class="container" style="top:100px;">
-    <div *ngFor="let sign of signs">
-      <div *ngIf="sign.level == iteration" class="sign" >
-        {{sign.departmentName}}, Глава: {{sign.departmentHeadName}}
-        <button class="float" (click)="signDocument(sign)">Подписать</button>
-      </div>
-    </div>
-    <button (click)="next()" > Далее</button>
-    <div *ngIf="validation">
-      <button (click)="submit()">Submit</button>
-    </div>
-  </div>
+</div>
+
+<button [hidden]="iteration !== 0" (click)="next()" style="position: relative; left: 45%;"> Старт </button>
+<button (click)="next()" [hidden]="iteration == 0"> Следующий отдел(ы)</button>
+<button [hidden]="!validation" (click)="submit()" class="submit">Submit</button>

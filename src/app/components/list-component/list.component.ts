@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgClass } from '@angular/common';
 import { DepartmentModel } from '../../models/department.model';
 import { DepartmentService } from '../../services/department.service';
 import { Response } from '@angular/http';

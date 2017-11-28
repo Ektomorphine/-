@@ -1,98 +1,38 @@
-body {
-  margin: 0;
-}
-.container {
-  position: relative;
-  width: 80%;
-  margin: auto;
-  font-family: 'Courier New';
-  top: 80px;
-}
-.icon {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  padding-left: 5px;
+.done {
+    background-color: #62e262;
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
 }
 
-.department-container {
-  position: relative;
-  // border: 1px solid black;
-  border-radius: 4px;
-  margin: 5px;
+.sign-list {
+  margin: 10px;
+  padding: 5px;
+  display: inline-block;
+}
+
+.block {
+  border: 1px solid grey;
+  margin: 2px;
   padding: 5px;
 }
 
-.validate {
-  color: green
-}
-
-.invalidate {
-  color: red;
-}
-
-.header {
-  background-color: #f44336;
-  box-shadow: 0 -1px 18px 5px rgba(50, 50, 50, 1);
-  color: white;
-  display: flex;
-  height: 65px;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 12;
-}
-
-.title {
-  font-family: 'Courier New';
-  font-size: 4vh;
-  margin: auto;
+.submit {
   position: relative;
-  text-align: center;
-  width: 400px;
-}
-
-hr {
-  height: 10px;
+  left: 40%;
+  background-color: lightseagreen;
   border: 0;
-  box-shadow: 0 10px 10px -10px #8c8b8b inset;
-}
-
-.bgc {
-  position: relative;
-  width: 105%;
-  margin: 0;
-  background-color: #dd3531;
-  left: -10px;
-  height: 320px;
-  box-shadow: inset 0px -5px 21px 0px rgba(0,0,0,0.26);
-}
-
-.white-text {
+  padding: 20px;
+  border-radius: 2px;
+  margin-top: 25px;
   color: white;
-}
-
-button {
-  font-family: monospace;
-  background-color: #dd3531;
-  color: #fff;
-  padding: 12px 30px;
-  border: 0;
-  border-radius: 4px;
-  box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.15);
+  width: 20%;
   transition: .5s;
   &:hover {
-    cursor: pointer;
-    background-color: #f44336;
+    border-radius: 50px;
   }
 }
 
-.float {
-  float: right;
-}
-
-.sign {
-  margin: 40px;
-  padding: 20px;
+html {
+  background-color: cornsilk;
 }
